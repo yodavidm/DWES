@@ -64,10 +64,8 @@ public class Empleado extends Persona {
     public void setCategoria(double categoria) throws DatosNoCorrectosException {
     	if(categoria>=1 && categoria<=10) {
     		this.categoria = categoria;
-    	}else {
-    		throw new DatosNoCorrectosException("Datos no correctos");
     	}
-        
+        this.categoria = categoria;
     }
 
     /**

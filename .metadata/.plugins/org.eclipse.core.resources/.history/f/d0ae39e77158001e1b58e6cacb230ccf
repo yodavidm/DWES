@@ -10,7 +10,6 @@ public class Empleado extends Persona {
     /** Los años de servicio del empleado. */
     public double anyos = 0;
 
-    
     /**
      * Constructor para crear una instancia de Empleado con nombre, DNI, sexo, categoría y años de servicio.
      *
@@ -61,13 +60,8 @@ public class Empleado extends Persona {
      *
      * @param categoria La nueva categoría del empleado (debe estar en el rango [1, 10]).
      */
-    public void setCategoria(double categoria) throws DatosNoCorrectosException {
-    	if(categoria>=1 && categoria<=10) {
-    		this.categoria = categoria;
-    	}else {
-    		throw new DatosNoCorrectosException("Datos no correctos");
-    	}
-        
+    public void setCategoria(double categoria) {
+        this.categoria = categoria;
     }
 
     /**
