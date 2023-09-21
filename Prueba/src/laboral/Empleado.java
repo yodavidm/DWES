@@ -1,0 +1,84 @@
+package laboral;
+/**
+ * La clase Empleado extiende la clase Persona y representa a un empleado con información adicional
+ * como categoría y años de servicio.
+ */
+public class Empleado extends Persona {
+    /** La categoría del empleado, debe estar en el rango [1, 10]. */
+    private double categoria;
+
+    /** Los años de servicio del empleado. */
+    public double anyos;
+
+    /**
+     * Constructor para crear una instancia de Empleado con nombre, DNI, sexo, categoría y años de servicio.
+     *
+     * @param nombre    El nombre del empleado.
+     * @param dni       El número de DNI del empleado.
+     * @param sexo      El sexo del empleado ("H" para hombre o "M" para mujer).
+     * @param categoria La categoría del empleado (debe estar en el rango [1, 10]).
+     * @param anyos     Los años de servicio del empleado.
+     * @throws DatosNoCorrectosException Si los datos proporcionados no son correctos.
+     */
+    public Empleado(String nombre, String dni, String sexo, double categoria, double anyos) throws DatosNoCorrectosException {
+        super(nombre, dni, sexo);
+        if (nombre != null && dni != null && categoria >= 1 && categoria <= 10 && anyos >= 0
+                && (sexo.equalsIgnoreCase("H") || sexo.equalsIgnoreCase("M"))) {
+            this.nombre = nombre;
+            this.dni = dni;
+            this.sexo = sexo;
+            this.categoria = categoria;
+            this.anyos = anyos;
+        } else {
+            throw new DatosNoCorrectosException("Datos no correctos");
+        }
+    }
+
+    /**
+     * Constructor para crear una instancia de Empleado con nombre, DNI y sexo.
+     *
+     * @param nombre El nombre del empleado.
+     * @param dni    El número de DNI del empleado.
+     * @param sexo   El sexo del empleado ("H" para hombre o "M" para mujer).
+     * @throws DatosNoCorrectosException Si los datos proporcionados no son correctos.
+     */
+    public Empleado(String nombre, String dni, String sexo) throws DatosNoCorrectosException {
+        super(nombre, dni, sexo);
+    }
+
+    /**
+     * Obtiene la categoría del empleado.
+     *
+     * @return La categoría del empleado.
+     */
+    public double getCategoria() {
+        return categoria;
+    }
+
+    /**
+     * Establece la categoría del empleado.
+     *
+     * @param categoria La nueva categoría del empleado (debe estar en el rango [1, 10]).
+     */
+    public void setCategoria(double categoria) {
+        this.categoria = categoria;
+    }
+
+    /**
+     * Incrementa en uno el número de años de servicio del empleado.
+     */
+    public void incrAnyo() {
+        anyos++;
+    }
+
+    /**
+     * Imprime los detalles del empleado, incluyendo nombre, DNI, sexo, categoría y años de servicio.
+     */
+    public void imprime() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("DNI: " + dni);
+        System.out.println("Sexo: " + sexo);
+        System.out.println("Categoría: " + categoria);
+        System.out.println("Años de servicio: " + anyos);
+    }
+}

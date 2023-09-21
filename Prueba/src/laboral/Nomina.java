@@ -1,0 +1,31 @@
+package laboral;
+/**
+ * La clase Nomina se utiliza para calcular el sueldo de un empleado en función de su categoría y años de servicio.
+ */
+public class Nomina {
+    /**
+     * Array que almacena los sueldos base correspondientes a cada categoría.
+     */
+    private static final int SUELDO_BASE[] = { 50000, 70000, 90000, 110000, 130000, 150000, 170000, 190000, 210000,
+            230000 };
+
+    /**
+     * Calcula el sueldo de un empleado en función de su categoría y años de servicio.
+     *
+     * @param empleado El empleado para el que se calcula el sueldo.
+     * @return El sueldo calculado para el empleado.
+     */
+    public static double sueldo(Empleado empleado) {
+        double sueldoBase = SUELDO_BASE[(int) empleado.getCategoria()];
+        double anyos = empleado.anyos;
+
+        double sueldo = sueldoBase + 5000 * anyos;
+
+        if (empleado.anyos <= 0) {
+            return 0;
+        }
+
+        return sueldo;
+    }
+}
+
