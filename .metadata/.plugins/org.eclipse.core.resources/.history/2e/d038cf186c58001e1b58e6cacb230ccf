@@ -5,10 +5,10 @@ package laboral;
  */
 public class Empleado extends Persona {
     /** La categoría del empleado, debe estar en el rango [1, 10]. */
-    private double categoria =1;
+    private double categoria;
 
     /** Los años de servicio del empleado. */
-    public double anyos = 0;
+    public double anyos;
 
     /**
      * Constructor para crear una instancia de Empleado con nombre, DNI, sexo, categoría y años de servicio.

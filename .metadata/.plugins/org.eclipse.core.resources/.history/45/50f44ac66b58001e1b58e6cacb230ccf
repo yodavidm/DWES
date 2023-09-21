@@ -16,7 +16,7 @@ public class Nomina {
      * @return El sueldo calculado para el empleado.
      */
     public static double sueldo(Empleado empleado) {
-        double sueldoBase = SUELDO_BASE[(int) empleado.getCategoria() -1 ];
+        double sueldoBase = SUELDO_BASE[(int) empleado.getCategoria() ];
         double anyos = empleado.anyos;
 
         double sueldo = sueldoBase + 5000 * anyos;

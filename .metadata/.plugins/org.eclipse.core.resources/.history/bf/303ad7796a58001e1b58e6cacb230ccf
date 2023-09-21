@@ -19,16 +19,10 @@ public class CalculaNominas {
 	        escribe(empleado, empleado2);
 	        */
         	
-            Empleado empleado1 = new Empleado("James Cosling", "32200035G", "H", 4, 7);
-            Empleado empleado2 = new Empleado("Ada Lovelace", "32000031G", "M");
+            Empleado empleado1 = new Empleado("James Cosling", "32200035G", "H", 9, 7);
+            Empleado empleado2 = new Empleado("Ada Lovelace", "32000031G", "M", 2, 0);
 
             // Llama al método escribe para mostrar los detalles de los empleados y sus sueldos
-            escribe(empleado1, empleado2);
-            
-            //incremento
-            empleado2.incrAnyo();
-            empleado1.setCategoria(9);
-            System.out.println("============================");
             escribe(empleado1, empleado2);
         } catch (DatosNoCorrectosException e) {
             System.out.println(e.getMessage());
